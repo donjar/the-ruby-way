@@ -81,7 +81,7 @@ In Ruby, methods are named by a convention:
 > x.upcase!
 => 'TRY'
 > x
-=> 'try'
+=> 'TRY'
 ```
 
 ## Some basic stuff
