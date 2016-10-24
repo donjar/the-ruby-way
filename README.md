@@ -156,6 +156,8 @@ end
 And yes, of course, you can get rid of the `return` statement.
 
 ## Some final stuff
+Of course there are more... But these are enough to get you started!
+
 ### String interpolation
 ```ruby
 > "I have #{3 + 5} apples in total!"
@@ -170,6 +172,7 @@ They start with `#`, except if it is inside a string.
 [2, 10, -3].map { |i| i * 2 } # multiplies all numbers by 2
 ```
 ### Ranges
+A range is just an array of consecutive numbers from a start number to end number.
 ```ruby
 > (3..5).each { |num| puts num }
 3
@@ -180,18 +183,33 @@ They start with `#`, except if it is inside a string.
 3
 4
 => 3...5
+> 4.times do |num|
+    (num..num + 2).each { |i| puts i }
+  end
+0
+1
+2
+1
+2
+3
+2
+3
+4
+3
+4
+5
+=> 4
 ```
-A range is just an array of consecutive numbers from a start number to end number.
 ### Symbols
+For now you can just assume that symbols are special strings.
 ```ruby
 > :test
 => :test
 > :test.to_s # converts to string
 => "test"
 ```
-For now you can just assume that symbols are special strings.
 ### Hashes
-Some languages call them "dictionaries". Example:
+Some languages call them "dictionaries"; these things are like arrays, except they store key-value pairs. Example:
 ```ruby
 { 'Indra' => 'Technical', 'Desmond' => 'Marketing', 'Glenys' => 'Presidential' }
 ```
@@ -202,6 +220,31 @@ This is a hash with the newer syntax:
 This is equivalent to:
 ```ruby
 { :username => 'herbert', :fullname => 'Herbert Ilhan Tanujaya', :cell => 'Technical' }
+```
+### nil
+Just like `NULL` on C or Java and `undefined` on Javascript.
+```ruby
+> [2, 3, 5].index 3
+=> 1
+> [2, 3, 5].index 7
+=> nil
+```
+### Boolean operations
+```ruby
+> true && false
+=> false
+> true && !false
+=> true
+> true || !true
+=> true
+```
+Basic stuff. There is also `and` and `or`, though most people recommend _not_ using them. They are different in terms of precedence. (I won't overload your brain, though - just remember that you don't need to use `and` and `or`!)
+### Unless
+`unless` is equivalent to `if !`.
+```ruby
+> puts 3 unless 2 == 3
+3
+=> nil
 ```
 ## Time for some practice!
 https://github.com/vikingeducation/learn_ruby
